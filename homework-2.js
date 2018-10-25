@@ -20,11 +20,19 @@ g(); // "THIS"
 // иначе не вычисляет заново, а возвращает сохранённое значение 
 
 function parseIntWithCache() { 
-	var cache;
-	return function () {
-  	
+	var cache = {};
+	return function (num) {
+  	var temp;
+    	console.log('Кэш: ' + cache[num]);
+  	cache[num] ? temp = null : temp = parseInt(num);
+    	temp ? cache[num] = temp : null;
+  	return cache[num];
   } 
 } 
+
+var c = parseIntWithCache();
+console.log(c(12)); // 12 // Кэш: undefined
+console.log(c(12)); // 12 // Кэш: 12
 
 
 // принимает любое количество аргументов, 
