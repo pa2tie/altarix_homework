@@ -46,3 +46,4 @@ console.log(getTotalSum(1, 2, 3)); // 6
 
 
 // * универсальный кэширующий декоратор
+// Также как и parseIntWithCache(), но с использованием JSON.parse и JSON.stringify
