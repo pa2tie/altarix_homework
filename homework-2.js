@@ -22,12 +22,11 @@ g(); // "THIS"
 function parseIntWithCache() { 
 	var cache = {};
 	return function (num) {
-  	var temp;
-    	console.log('Кэш: ' + cache[num]);
-  	cache[num] ? temp = null : temp = parseInt(num);
-    	temp ? cache[num] = temp : null;
-  	return cache[num];
-  } 
+		console.log('Кэш: ' + cache[num]);
+		var temp = cache[num] ? null : parseInt(num);
+		cache[num] = temp ? temp : null;
+		return cache[num];
+  	} 
 } 
 
 var c = parseIntWithCache();
