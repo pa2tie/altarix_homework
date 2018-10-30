@@ -8,9 +8,9 @@ function Clock() {
 }
   
 Clock.prototype.start = function() {
-    setInterval(function() {
+    setInterval((function() {
       this.date = new Date();
-    }, 1000);
+    }).bind(this), 1000);
 }
   
 Clock.prototype.getTime = function() {
