@@ -44,7 +44,7 @@ AlarmClock.prototype.alarm = function() {
 
 AlarmClock.prototype.setAlarmTime = function(alarmTime) {
 	this.alarmTime = alarmTime;
-  this.alarm();
+  	this.alarm();
 }
 
 const myAlarmClock = new AlarmClock();
