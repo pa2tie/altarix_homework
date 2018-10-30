@@ -31,3 +31,22 @@ setTimeout(function() {
 // AlarmClock должен иметь метод setAlarmTime, который будет принимать время срабатывания будильника в формате «hh:mm:ss». 
 // Необходимо расширить метод start класса Clock так, чтобы если время в this.date оказалось равным времени alarmTime, отобразился alert c каким-нибудь текстом. 
 
+function AlarmClock() {}
+
+AlarmClock.prototype = Object.create(Clock.prototype);
+AlarmClock.prototype.constructor = AlarmClock;
+
+AlarmClock.prototype.alarm = function() {
+  setInterval((function() {
+    if (this.getTime() == this.alarmTime) alert("ALARM!");
+  }).bind(this), 1000);
+}
+
+AlarmClock.prototype.setAlarmTime = function(alarmTime) {
+	this.alarmTime = alarmTime;
+  this.alarm();
+}
+
+const myAlarmClock = new AlarmClock();
+myAlarmClock.start();
+myAlarmClock.setAlarmTime("15:36:00"); 
