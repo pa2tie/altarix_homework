@@ -1,0 +1,23 @@
+.calendar {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.calendar th {
+    background-color: #E6E6E6;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+}
+
+.calendar td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+}
+
+.active {
+    background-color: red;
+}
